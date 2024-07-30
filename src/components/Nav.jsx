@@ -14,7 +14,6 @@ const Nav = () => {
   useEffect(() => {
     const setProvidersFn = async () => {
       const response = await getProviders();
-      console.log(response);
       setProviders(response);
     };
 
@@ -31,7 +30,7 @@ const Nav = () => {
           width={30}
           height={30}
         />
-        <p className="logo_text">Promptopia por Nicolás Forero</p>
+        <p className="logo_text">Promptopia by Nicolás Forero</p>
       </Link>
 
       {/* Desktop Navigation */}
