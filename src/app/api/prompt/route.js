@@ -3,7 +3,10 @@ import { connectToDB } from "@utils/database";
 
 export const GET = async (req, res) => {
   try {
-    await connectToDB();
+    const dbConnected = await connectToDB();
+    if (!dbConnected) {
+      throw new Error("Failed to connect to the database");
+    }
 
     const prompts = await Prompt.find({}).populate("creator");
 
